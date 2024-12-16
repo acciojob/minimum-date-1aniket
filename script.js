@@ -1,5 +1,53 @@
 function minDate(dates) {
   //write you code here
+
+	let year =[];
+	let months=[];
+	let date="";
+	let temp=parseInt(dates[0].slice(0 , 4));
+	for(let i=0;i<dates.length;i++)
+	{
+	   
+		if(parseInt(dates[i].slice(0 , 4)) <= temp)
+		{
+		 
+			year.push(dates[i]);
+			temp=parseInt(dates[i].slice(0 , 4));
+		}
+	}
+
+	
+
+	temp=parseInt(year[0].slice(5 , 7));
+	for(let i=0;i<year.length;i++)
+	{
+		if(parseInt(year[i].slice(5,7))<=temp)
+		{
+			months.push(year[i]);
+			temp=parseInt(year[i].slice(5,7));
+		}
+	}
+
+
+
+	temp=parseInt(months[0].slice(8,10));
+
+	for(let i=0;i<months.length;i++)
+	{
+	  
+	  
+		if(parseInt(months[i].slice(8,10)) <= temp)
+		{
+		  
+			date=months[i];
+			temp=parseInt(months[i].slice(8,-1))
+		}
+	}
+
+
+return date;
+	
+	
 }
 
 // Do not change the code
@@ -36,5 +84,4 @@ var dates = [
   "2023/03/29",
   "2023/03/30",
 ];
-
 alert(minDate(dates));
